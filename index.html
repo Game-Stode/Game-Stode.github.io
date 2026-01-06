@@ -336,7 +336,18 @@
                 }
             });
             
-            // ... (Rest of the script) ...
+            // --- Footer Flip Card Logic (NEW) ---
+            const flipCards = document.querySelectorAll('.flip-card');
+
+            flipCards.forEach(card => {
+                card.addEventListener('click', (event) => {
+                    // Stop propagation to prevent links inside from activating immediately
+                    event.stopPropagation(); 
+                    const innerCard = card.querySelector('.flip-card-inner');
+                    // Toggle the new class for the flip action
+                    innerCard.classList.toggle('is-flipped');
+                });
+            });
         });
     </script>
 </body>
