@@ -359,9 +359,12 @@
             transform-style: preserve-3d;
             border-radius: 15px;
         }
-        .flip-card:hover .flip-card-inner {
+        /* REMOVED: .flip-card:hover .flip-card-inner { transform: rotateY(180deg); } to enable click flip */
+
+        .flip-card-inner.is-flipped {
             transform: rotateY(180deg);
         }
+        
         .flip-card-front, .flip-card-back {
             position: absolute;
             width: 100%;
